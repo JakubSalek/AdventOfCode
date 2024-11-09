@@ -8,10 +8,7 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            File inputFile = new File("src/AoC2015/Day3/input.txt");
-            Scanner input = new Scanner(inputFile);
-
+        try (Scanner input = new Scanner(new File("src/AoC2015/Day3/input.txt"))) {
             String data = input.nextLine();
             Set<String> visitedHouses = new HashSet<>();
 
@@ -35,8 +32,6 @@ public class Main {
             }
 
             System.out.println(visitedHouses.size());
-
-            input.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
             throw new RuntimeException(e);

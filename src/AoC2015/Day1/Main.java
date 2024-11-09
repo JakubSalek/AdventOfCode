@@ -6,11 +6,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            File inputFile = new File("src/AoC2015/Day1/input.txt");
-            Scanner input = new Scanner(inputFile);
+        try (Scanner input = new Scanner(new File("src/AoC2015/Day1/input.txt"))) {
             String data = input.nextLine();
-            input.close();
 
             int floor = 0;
             int position = 0;
@@ -29,7 +26,6 @@ public class Main {
             }
 
             System.out.println("Final floor: " + floor);
-
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
             throw new RuntimeException(e);

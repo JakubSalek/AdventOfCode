@@ -6,10 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            File inputFile = new File("src/AoC2015/Day5/input.txt");
-            Scanner input = new Scanner(inputFile);
-
+        try (Scanner input = new Scanner(new File("src/AoC2015/Day5/input.txt"))) {
             int niceStringsCount = 0, niceStringsCountPt2 = 0;
             while (input.hasNextLine()) {
                 String line = input.nextLine();
@@ -18,8 +15,6 @@ public class Main {
             }
             System.out.println("Nice strings count: " + niceStringsCount);
             System.out.println("Nice strings count pt2: " + niceStringsCountPt2);
-
-            input.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
             throw new RuntimeException(e);

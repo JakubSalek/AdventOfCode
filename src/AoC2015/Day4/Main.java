@@ -10,9 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        try {
-            File inputFile = new File("src/AoC2015/Day4/input.txt");
-            Scanner input = new Scanner(inputFile);
+        try (Scanner input = new Scanner(new File("src/AoC2015/Day4/input.txt"))) {
             final String myInput = input.nextLine();
 
             MessageDigest md5 = MessageDigest.getInstance("MD5");
@@ -29,8 +27,6 @@ public class Main {
             }
             System.out.println("Starting with 5 zeros: " + fiveZerosIndex);
             System.out.println("Starting with 6 zeros: " + sixZerosIndex);
-
-            input.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
             throw new RuntimeException(e);

@@ -7,10 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            File inputFile = new File("src/AoC2015/Day2/input.txt");
-            Scanner input = new Scanner(inputFile);
-
+        try (Scanner input = new Scanner(new File("src/AoC2015/Day2/input.txt"))) {
             int paperSum = 0;
             int ribbonSum = 0;
             while (input.hasNextLine()) {
@@ -34,7 +31,6 @@ public class Main {
             System.out.println("Paper sum: " + paperSum);
             System.out.println("Ribbon sum: " + ribbonSum);
 
-            input.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
             throw new RuntimeException(e);
