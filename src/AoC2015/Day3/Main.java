@@ -2,7 +2,9 @@ package AoC2015.Day3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,67 +13,28 @@ public class Main {
             Scanner input = new Scanner(inputFile);
 
             String data = input.nextLine();
-            int dataLength = data.length() * 2;
+            Set<String> visitedHouses = new HashSet<>();
 
-            boolean[][] houses = new boolean[data.length()*2][data.length()*2];
-            for (int i = 0; i < dataLength; i++) {
-                for (int j = 0; j < dataLength; j++) {
-                    houses[i][j] = false;
-                }
-            }
-            int[] santaPos = {data.length(), data.length()};
-            int[] roboSantaPos = {data.length(), data.length()};
-            houses[santaPos[0]][santaPos[1]] = true;
+            int[] santaPos = {0, 0};
+            int[] roboSantaPos = {0, 0};
+            visitedHouses.add("0,0");
 
             boolean santaTurn = true;
             for (char c : data.toCharArray()) {
-                if (c == '^') {
-                    if (santaTurn) {
-                        santaTurn = false;
-                        santaPos[1] = santaPos[1] - 1;
-                    } else {
-                        santaTurn = true;
-                        roboSantaPos[1] = roboSantaPos[1] - 1;
-                    }
-                } else if (c == 'v') {
-                    if (santaTurn) {
-                        santaTurn = false;
-                        santaPos[1] = santaPos[1] + 1;
-                    } else {
-                        santaTurn = true;
-                        roboSantaPos[1] = roboSantaPos[1] + 1;
-                    }
-                } else if (c == '<') {
-                    if (santaTurn) {
-                        santaTurn = false;
-                        santaPos[0] = santaPos[0] - 1;
-                    } else {
-                        santaTurn = true;
-                        roboSantaPos[0] = roboSantaPos[0] - 1;
-                    }
-                } else if (c == '>') {
-                    if (santaTurn) {
-                        santaTurn = false;
-                        santaPos[0] = santaPos[0] + 1;
-                    } else {
-                        santaTurn = true;
-                        roboSantaPos[0] = roboSantaPos[0] + 1;
-                    }
+                int[] currentPos = santaTurn ? santaPos : roboSantaPos;
+
+                switch (c) {
+                    case '^' -> currentPos[1]--;
+                    case 'v' -> currentPos[1]++;
+                    case '<' -> currentPos[0]--;
+                    case '>' -> currentPos[0]++;
                 }
-                houses[santaPos[0]][santaPos[1]] = true;
-                houses[roboSantaPos[0]][roboSantaPos[1]] = true;
+
+                visitedHouses.add(currentPos[0] + "," + currentPos[1]);
+                santaTurn = !santaTurn;
             }
 
-            int visitedHouses = 0;
-            for (boolean[] house : houses) {
-                for (int j = 0; j < houses.length; j++) {
-                    if (house[j]) {
-                        visitedHouses++;
-                    }
-                }
-            }
-
-            System.out.println(visitedHouses);
+            System.out.println(visitedHouses.size());
 
             input.close();
         } catch (FileNotFoundException e) {
