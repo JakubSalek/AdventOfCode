@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try {
-            File inputFile = new File("src/AoC2015/DayTwo/input.txt");
+            File inputFile = new File("src/AoC2015/DayX/input.txt");
             Scanner input = new Scanner(inputFile);
 
 
