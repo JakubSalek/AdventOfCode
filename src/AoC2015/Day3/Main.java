@@ -8,8 +8,8 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        try (Scanner input = new Scanner(new File("src/AoC2015/Day3/input.txt"))) {
-            String data = input.nextLine();
+        try (Scanner scanner = new Scanner(new File("src/AoC2015/Day3/input.txt"))) {
+            String data = scanner.nextLine();
             Set<String> visitedHouses = new HashSet<>();
 
             int[] santaPos = {0, 0};

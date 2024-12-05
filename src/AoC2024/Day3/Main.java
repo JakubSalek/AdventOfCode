@@ -8,13 +8,13 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-        try  (Scanner input = new Scanner(new File("src/AoC2024/Day3/input.txt"))) {
+        try  (Scanner scanner = new Scanner(new File("src/AoC2024/Day3/input.txt"))) {
             int sumPt1 = 0, sumPt2 = 0;
             boolean mulActive = true;
 
             StringBuilder myInput = new StringBuilder();
-            while (input.hasNextLine()) {
-                myInput.append(input.nextLine());
+            while (scanner.hasNextLine()) {
+                myInput.append(scanner.nextLine());
             }
 
             Pattern pattern = Pattern.compile("mul\\(\\d{1,3},\\d{1,3}\\)|do\\(\\)|don't\\(\\)");

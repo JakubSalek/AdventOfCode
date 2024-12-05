@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("src/AoC2024/Day2/input.txt"));
+        Scanner scanner = new Scanner(new File("src/AoC2024/Day2/input.txt"));
         int safeSumPt1 = 0, safeSumPt2 = 0;
 
-        while (input.hasNextLine()) {
-            String line = input.nextLine();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
 
             ArrayList<Integer> values = new ArrayList<>((Arrays.stream(line.split(" ")).map(Integer::parseInt).toList()));
             if (isSafeBase(values)) safeSumPt1++;

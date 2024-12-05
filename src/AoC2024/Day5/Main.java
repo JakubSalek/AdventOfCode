@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("src/AoC2024/Day5/input.txt"));
+        Scanner scanner = new Scanner(new File("src/AoC2024/Day5/input.txt"));
         int resultPt1 = 0, resultPt2 = 0;
         boolean inputSecondPart = false;
         ArrayList<Integer>[] valuesNeededBefore = new ArrayList[100];
@@ -18,8 +18,8 @@ public class Main {
             valuesNeededBefore[i] = new ArrayList<>();
         }
 
-        while (input.hasNextLine()) {
-            String line = input.nextLine();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
             if (line.isBlank()) {
                 inputSecondPart = true;
                 continue;

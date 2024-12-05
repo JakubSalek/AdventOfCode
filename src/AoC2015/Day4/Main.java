@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        try (Scanner input = new Scanner(new File("src/AoC2015/Day4/input.txt"))) {
-            final String myInput = input.nextLine();
+        try (Scanner scanner = new Scanner(new File("src/AoC2015/Day4/input.txt"))) {
+            final String myInput = scanner.nextLine();
 
             MessageDigest md5 = MessageDigest.getInstance("MD5");
 

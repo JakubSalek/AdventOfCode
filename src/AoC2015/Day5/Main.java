@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try (Scanner input = new Scanner(new File("src/AoC2015/Day5/input.txt"))) {
+        try (Scanner scanner = new Scanner(new File("src/AoC2015/Day5/input.txt"))) {
             int niceStringsCount = 0, niceStringsCountPt2 = 0;
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
                 if (isNiceString(line)) niceStringsCount++;
                 if (isNiceStringPt2(line)) niceStringsCountPt2++;
             }

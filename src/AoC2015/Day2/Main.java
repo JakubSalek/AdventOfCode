@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try (Scanner input = new Scanner(new File("src/AoC2015/Day2/input.txt"))) {
+        try (Scanner scanner = new Scanner(new File("src/AoC2015/Day2/scanner.txt"))) {
             int paperSum = 0;
             int ribbonSum = 0;
-            while (input.hasNextLine()) {
-                String[] sizes = input.nextLine().split("x");
+            while (scanner.hasNextLine()) {
+                String[] sizes = scanner.nextLine().split("x");
 
                 int length = Integer.parseInt(sizes[0]);
                 int width = Integer.parseInt(sizes[1]);

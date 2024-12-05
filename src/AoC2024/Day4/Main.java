@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("src/AoC2024/Day4/input.txt"));
+        Scanner scanner = new Scanner(new File("src/AoC2024/Day4/input.txt"));
         int resultPt1 = 0, resultPt2 = 0;
 
         List<List<Character>> array = new ArrayList<>();
-        while (input.hasNextLine()) {
-            String line = input.nextLine();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
             List<Character> row = new ArrayList<>();
             for (char c : line.toCharArray()) {
                 row.add(c);

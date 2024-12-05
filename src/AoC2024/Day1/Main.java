@@ -11,10 +11,10 @@ import static java.lang.Math.abs;
 
 public class Main {
     public static void main(String[] args) {
-        try  (Scanner input = new Scanner(new File("src/AoC2024/Day1/input.txt"))) {
+        try  (Scanner scanner = new Scanner(new File("src/AoC2024/Day1/input.txt"))) {
             List<Integer> list1 = new ArrayList<>(), list2 = new ArrayList<>();
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
                 String[] tokens = line.split(" {3}");
                 list1.add(Integer.parseInt(tokens[0]));
                 list2.add(Integer.parseInt(tokens[1]));

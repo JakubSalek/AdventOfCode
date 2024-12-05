@@ -8,11 +8,11 @@ public class Main {
     private static final int GRID_SIZE = 1000;
 
     public static void main(String[] args) {
-        try (Scanner input = new Scanner(new File("src/AoC2015/Day6/input.txt"))) {
+        try (Scanner scanner = new Scanner(new File("src/AoC2015/Day6/input.txt"))) {
             boolean[][] lights = new boolean[GRID_SIZE][GRID_SIZE];
             int[][] lightsPt2 = new int[GRID_SIZE][GRID_SIZE];
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
                 if (line.startsWith("turn")) line = line.replace("turn ", "");
                 final String[] tokens = line.split(" ");
                 final String[] startCoords = tokens[1].split(",");
