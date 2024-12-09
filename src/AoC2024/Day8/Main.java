@@ -19,7 +19,7 @@ public class Main {
     }
 
     private static int populateMap(ArrayList<char[]> map, boolean partTwo) {
-        boolean[][] antinodes = new boolean[map.size()][map.getFirst().length];
+        boolean[][] antinodes = new boolean[map.size()][map.get(0).length];
         for (boolean[] antinode : antinodes) {
             Arrays.fill(antinode, false);
         }
